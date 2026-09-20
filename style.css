@@ -540,9 +540,6 @@ h1 {
 }
 
 
-/* =========================
-   🌸 RÓLAM SZÖVEG
-========================= */
 
 .about-card {
 
@@ -703,9 +700,7 @@ h1 {
 }
 
 
-/* =========================
-   💌 NAGY LEVÉL
-========================= */
+
 
 .bonus-paper {
 
@@ -751,7 +746,6 @@ h1 {
 }
 
 
-/* KINYITVA */
 
 .bonus-letter.open .bonus-paper {
 
@@ -764,7 +758,6 @@ h1 {
 }
 
 
-/* BORÍTÉK ELTŰNIK */
 
 .bonus-letter.open .bonus-envelope {
 
@@ -776,7 +769,6 @@ h1 {
 }
 
 
-/* LEVÉL DÍSZ */
 
 .bonus-hearts {
 
@@ -793,7 +785,6 @@ h1 {
 }
 
 
-/* LEVÉL CÍM */
 
 .bonus-paper h2 {
 
@@ -808,7 +799,6 @@ h1 {
 }
 
 
-/* LEVÉL SZÖVEG */
 
 .bonus-paper p {
 
@@ -822,7 +812,6 @@ h1 {
 }
 
 
-/* TITKOS ÜZENET */
 
 .secret-message {
 
@@ -845,7 +834,6 @@ h1 {
 }
 
 
-/* ALÁÍRÁS */
 
 .bonus-signature {
 
@@ -859,7 +847,6 @@ h1 {
 }
 
 
-/* BEZÁRÁS */
 
 #closeBonus {
 
@@ -896,9 +883,7 @@ h1 {
 }
 
 
-/* =========================
-   ✨ ANIMÁCIÓK
-========================= */
+
 
 @keyframes titleFloat {
 
@@ -926,9 +911,6 @@ h1 {
 }
 
 
-/* =========================
-   📱 MOBIL
-========================= */
 
 @media (max-width: 600px) {
 
@@ -991,4 +973,210 @@ h1 {
         font-size: 14px;
     }
 
+}
+.hellokitty {
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+
+    width: 150px;
+    max-width: 25vw;
+
+    z-index: 4000;
+
+    pointer-events: none;
+
+    filter: drop-shadow(0 8px 12px rgba(210, 90, 140, 0.25));
+
+    animation: kittyFloat 3s ease-in-out infinite;
+}
+
+
+
+@keyframes kittyFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .hellokitty {
+        width: 100px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+}
+
+
+.kitty-button {
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    width: 150px;
+    z-index: 4000;
+    cursor: pointer;
+    animation: kittyFloat 3s ease-in-out infinite;
+}
+
+.kitty-button img {
+    width: 100%;
+    display: block;
+    filter: drop-shadow(0 8px 12px rgba(210, 90, 140, 0.25));
+    transition: 0.2s ease;
+}
+
+.kitty-button:hover img {
+    transform: scale(1.1) rotate(3deg);
+}
+
+@keyframes kittyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+}
+
+
+
+.kitty-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    font-size: 30px;
+}
+
+@keyframes kittyHeartExplosion {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    15% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(0.7)
+            rotate(var(--rotation));
+        opacity: 0;
+    }
+}
+
+
+
+.flying-kitty {
+    position: fixed;
+    pointer-events: none;
+    z-index: 99998;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+
+    animation: flyingKitty 1.8s ease-out forwards;
+}
+
+@keyframes flyingKitty {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.3)
+            rotate(10deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(0.7)
+            rotate(var(--rotation));
+        opacity: 0;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .kitty-button {
+        width: 100px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .flying-kitty {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+.giant-kitty {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 320px;
+    z-index: 100000;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+
+    animation: giantKitty 2s ease-out forwards;
+}
+
+@keyframes giantKitty {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 1;
+    }
+
+    45% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
 }
