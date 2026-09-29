@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <head>
+        <div class="nav-links">
+            <a href="index.html">Roblox</a>
+            <a href="rolam.html">Mucikanak</a>
+            <a href="ajandekok.html">Ajandekok</a>
+        </div>
+
+        <div class="flowers">
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+        </div>
+
+        <div id="loader">
+            <div class="heart">💗</div>
+        </div>
+
+        <div class="content">
+        </div>
+    </head>
+
+    <main>
+        <section class="gift-page">
+
+            <h1 class="gift-title">🎁 Ajándékok 🎁</h1>
+
+            <div class="gift-card" id="giftCard">
+
+                <div class="gift-sparkles">✨ 💗 ✨</div>
+
+                <div class="gift-image">
+                    <img src="kittyplushcrop.png" alt="Hello Kitty plüss">
+                </div>
+
+                <div class="gift-content">
+
+                    <div class="gift-bow">🎀</div>
+
+                    <h2>Van itt valami neked...</h2>
+
+                    <p>
+                        Ezt az első találkozásunkra vettem neked, csak egy kis apróság hogy emlékeztessen az első
+                        találkozónkra és rám, jól éreztem veled magad, és remelem majd tudjuk folytatni tovább, de ez a
+                        jövő meséje.
+                        Remélem tetszett és hogy még sok ajándékot kapsz tőleeem muci🥰😘😘😍.
+                    </p>
+
+                    <button id="openGift">
+                        🎁 Megnyitom
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="secret-gift" id="secretGift">
+
+                <div class="big-heart">💗</div>
+
+                <h2>🎀 Meglepetés! 🎀</h2>
+
+                <p>
+                    Tudom hogy szereted a Hello Kittyt ezért probáltam neked találni valamit.
+                    Nagyon megkedveltelek ezen az első talinkon🥰, remélem te is hasonlóan érzel.
+                </p>
+
+                <button id="closeGift">
+                    ✕ Bezárom
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <script>
+
+            const openGift = document.getElementById("openGift");
+            const closeGift = document.getElementById("closeGift");
+            const giftCard = document.getElementById("giftCard");
+            const secretGift = document.getElementById("secretGift");
+
+            openGift.addEventListener("click", function (event) {
+
+                giftCard.classList.add("opening");
+
+                createGiftExplosion(
+                    event.clientX,
+                    event.clientY
+                );
+
+                setTimeout(() => {
+                    secretGift.classList.add("show");
+                }, 700);
+
+            });
+
+
+            closeGift.addEventListener("click", function () {
+
+                secretGift.classList.remove("show");
+
+                setTimeout(() => {
+                    giftCard.classList.remove("opening");
+                }, 400);
+
+            });
+
+
+            function createGiftExplosion(x, y) {
+
+                const symbols = [
+                    "💗",
+                    "💖",
+                    "💕",
+                    "💓",
+                    "💞",
+                    "✨",
+                    "🌸",
+                    "🎀"
+                ];
+
+                for (let i = 0; i < 60; i++) {
+
+                    const particle = document.createElement("span");
+
+                    particle.className = "gift-particle";
+
+                    particle.innerHTML =
+                        symbols[
+                        Math.floor(Math.random() * symbols.length)
+                        ];
+
+                    particle.style.left = x + "px";
+                    particle.style.top = y + "px";
+
+                    const angle =
+                        Math.random() * Math.PI * 2;
+
+                    const distance =
+                        100 + Math.random() * 350;
+
+                    particle.style.setProperty(
+                        "--x",
+                        Math.cos(angle) * distance + "px"
+                    );
+
+                    particle.style.setProperty(
+                        "--y",
+                        Math.sin(angle) * distance + "px"
+                    );
+
+                    particle.style.setProperty(
+                        "--rotation",
+                        Math.random() * 720 - 360 + "deg"
+                    );
+
+                    particle.style.fontSize =
+                        15 + Math.random() * 25 + "px";
+
+                    document.body.appendChild(particle);
+
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 1800);
+                }
+            }
+
+        </script>
+    </main>
+</body>
