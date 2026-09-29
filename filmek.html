@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <head>
+        <div class="nav-links">
+            <a href="index.html">Roblox</a>
+            <a href="rolam.html">Mucikanak</a>
+            <a href="ajandekok.html">Ajandekok</a>
+            <a href="filmek.html">Filmek</a>
+
+        </div>
+
+        <div class="flowers">
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+        </div>
+
+        <div id="loader">
+            <div class="heart">💗</div>
+        </div>
+
+        <div class="content">
+        </div>
+    </head>
+
+    <!DOCTYPE html>
+    <html lang="hu">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Filmek 🎬</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <main class="film-page">
+
+            <h1 class="film-page-title">
+                🎬 Filmek 🎬
+            </h1>
+
+            <p class="film-page-subtitle">
+                A filmek amiket láttunk együtt 💗
+            </p>
+
+
+            <div class="film-card-wrap">
+
+                <div class="film-card-new">
+
+                    <div class="film-card-photo">
+
+                        <img src="hitmanbodyguards.jpg" alt="Sokkal több mint testőr">
+
+                    </div>
+
+
+                    <div class="film-card-content">
+
+                        <span class="film-card-tag">
+                            💗Első közös film
+                        </span>
+
+                        <h2>
+                            Sokkal több mint testőr
+                        </h2>
+
+                        <p>
+                            Ezt a filmet láttuk előszőr 🥰
+                        </p>
+
+                        <button class="film-memory-button" id="filmOpen">
+
+                            💗 Üzenet megnyitása
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <div class="film-memory-overlay" id="filmMemory">
+
+            <button class="film-close" id="filmClose">
+
+                ×
+
+            </button>
+
+
+            <div class="film-memory-box">
+
+                <div class="film-big-photo">
+
+                    <img src="hitmanbodyguards.jpg" alt="Sokkal több mint testőr">
+
+                </div>
+
+
+                <div class="film-memory-text">
+
+                    <div class="film-memory-hearts">
+                        💗 ✨ 💕 ✨ 💗
+                    </div>
+
+                    <h2>
+                        Egy kis üzenet neked 💗
+                    </h2>
+
+                    <p>
+                        Az első film amit együtt néztünk picit összevesztünk közben, de nagyon élveztem és nagyon
+                        aranyos voltál ahogy nézted és nagyon cuki vagy hogy abba a  pulcsiba vagy amit adtam, és 🥰köszönöm🥰 hogy Lilivel
+                        alszol, nagyon várom hogy szombaton veled legyek remélem te is 🥰muci🥰
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script>
+
+            const filmOpen =
+                document.getElementById("filmOpen");
+
+            const filmMemory =
+                document.getElementById("filmMemory");
+
+            const filmClose =
+                document.getElementById("filmClose");
+
+
+            /* ==============================
+               MEGNYITÁS
+            ============================== */
+
+            filmOpen.addEventListener("click", function (event) {
+
+                filmMemory.classList.add("film-memory-open");
+
+                createFilmHearts(
+                    event.clientX,
+                    event.clientY
+                );
+
+            });
+
+
+            /* ==============================
+               BEZÁRÁS
+            ============================== */
+
+            filmClose.addEventListener("click", function () {
+
+                filmMemory.classList.remove(
+                    "film-memory-open"
+                );
+
+            });
+
+
+            /* Háttérre kattintva bezár */
+
+            filmMemory.addEventListener(
+                "click",
+                function (event) {
+
+                    if (event.target === filmMemory) {
+
+                        filmMemory.classList.remove(
+                            "film-memory-open"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            /* ==============================
+               SZÍVROBBANÁS
+            ============================== */
+
+            function createFilmHearts(x, y) {
+
+                const hearts = [
+
+                    "💗",
+                    "💖",
+                    "💕",
+                    "💓",
+                    "💞",
+                    "✨",
+                    "🌸",
+                    "💘"
+
+                ];
+
+
+                for (let i = 0; i < 60; i++) {
+
+                    const heart =
+                        document.createElement("span");
+
+
+                    heart.className =
+                        "film-flying-heart";
+
+
+                    heart.innerHTML =
+                        hearts[
+                        Math.floor(
+                            Math.random() *
+                            hearts.length
+                        )
+                        ];
+
+
+                    heart.style.left =
+                        x + "px";
+
+                    heart.style.top =
+                        y + "px";
+
+
+                    const angle =
+                        Math.random() *
+                        Math.PI * 2;
+
+
+                    const distance =
+                        100 +
+                        Math.random() * 350;
+
+
+                    heart.style.setProperty(
+                        "--heart-x",
+                        Math.cos(angle) *
+                        distance +
+                        "px"
+                    );
+
+
+                    heart.style.setProperty(
+                        "--heart-y",
+                        Math.sin(angle) *
+                        distance +
+                        "px"
+                    );
+
+
+                    heart.style.setProperty(
+                        "--heart-rotation",
+                        Math.random() *
+                        720 -
+                        360 +
+                        "deg"
+                    );
+
+
+                    heart.style.fontSize =
+                        15 +
+                        Math.random() * 30 +
+                        "px";
+
+
+                    document.body.appendChild(
+                        heart
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            heart.remove();
+
+                        },
+                        1800
+                    );
+
+                }
+
+            }
+
+        </script>
+
+    </body>
+
+    </html>
