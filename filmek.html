@@ -5,8 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Filmek 🎬</title>
 
@@ -73,7 +72,7 @@
     </div>
 
 
-   
+
 
     <div id="loader">
 
@@ -110,9 +109,7 @@
 
                 <div class="film-card-photo">
 
-                    <img
-                        src="hitmanbodyguards.jpg"
-                        alt="Sokkal több mint testőr">
+                    <img src="hitmanbodyguards.jpg" alt="Sokkal több mint testőr">
 
                 </div>
 
@@ -135,9 +132,7 @@
                     </p>
 
 
-                    <button
-                        class="film-memory-button"
-                        data-image="hitmanbodyguards.jpg"
+                    <button class="film-memory-button" data-image="hitmanbodyguards.jpg"
                         data-title="Sokkal több mint testőr"
                         data-message="Az első film amit együtt néztünk picit összevesztünk közben, de nagyon élveztem és nagyon aranyos voltál ahogy nézted és nagyon cuki vagy hogy abba a pulcsiba vagy amit adtam, és 🥰köszönöm🥰 hogy Lilivel alszol, nagyon várom hogy szombaton veled legyek remélem te is 🥰muci🥰">
 
@@ -169,9 +164,7 @@
 
                 <div class="film-card-photo">
 
-                    <img
-                        src="Anna.jpg"
-                        alt="Anna">
+                    <img src="Anna.jpg" alt="Anna">
 
                 </div>
 
@@ -194,10 +187,7 @@
                     </p>
 
 
-                    <button
-                        class="film-memory-button anna-button"
-                        data-image="anna.jpg"
-                        data-title="Anna"
+                    <button class="film-memory-button anna-button" data-image="anna.jpg" data-title="Anna"
                         data-message="🩸🥰Ezt a filmet lattuk masodjara, elsore bealudtam de arrol nem beszelunk😴. Nagyon tetszett, remélem még sok filmet nézünk🩸🥰">
 
                         💗 Üzenet megnyitása
@@ -216,14 +206,10 @@
 
 
 
-    <div
-        class="film-memory-overlay"
-        id="filmMemory">
+    <div class="film-memory-overlay" id="filmMemory">
 
 
-        <button
-            class="film-close"
-            id="filmClose">
+        <button class="film-close" id="filmClose">
 
             ×
 
@@ -236,10 +222,7 @@
 
             <div class="film-big-photo">
 
-                <img
-                    id="filmPopupImage"
-                    src=""
-                    alt="Film">
+                <img id="filmPopupImage" src="" alt="Film">
 
             </div>
 
@@ -254,7 +237,8 @@
 
 
                 <h2 id="filmPopupTitle">
-                    🩸🥰Ezt a filmet lattuk masodjara, elsore bealudtam de arrol nem beszelunk😴. Nagyon tetszett, remélem még sok filmet nézünk🩸🥰
+                    🩸🥰Ezt a filmet lattuk masodjara, elsore bealudtam de arrol nem beszelunk😴. Nagyon tetszett,
+                    remélem még sok filmet nézünk🩸🥰
                 </h2>
 
 
@@ -316,17 +300,20 @@
 
 
         filmButtons.forEach(
-            function(button) {
+            function (button) {
 
 
                 button.addEventListener(
                     "click",
-                    function(event) {
+                    function (event) {
 
 
 
-                        filmPopupImage.src =
-                            button.dataset.image;
+                        const cardImage = button
+                            .closest(".film-card-new")
+                            .querySelector(".film-card-photo img");
+
+                        filmPopupImage.src = cardImage.src;
 
 
                         filmPopupTitle.textContent =
@@ -383,7 +370,7 @@
 
         filmClose.addEventListener(
             "click",
-            function() {
+            function () {
 
                 filmMemory.classList.remove(
                     "film-memory-open"
@@ -397,7 +384,7 @@
 
         filmMemory.addEventListener(
             "click",
-            function(event) {
+            function (event) {
 
 
                 if (
@@ -422,7 +409,7 @@
 
         document.addEventListener(
             "keydown",
-            function(event) {
+            function (event) {
 
 
                 if (
@@ -479,10 +466,10 @@
 
                 heart.innerHTML =
                     hearts[
-                        Math.floor(
-                            Math.random() *
-                            hearts.length
-                        )
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
                     ];
 
 
@@ -547,7 +534,7 @@
 
 
                 setTimeout(
-                    function() {
+                    function () {
 
                         heart.remove();
 
@@ -566,149 +553,149 @@
 
         function createAnnaExplosion(x, y) {
 
-    /* ❤️ SZÍVEK */
+            /* ❤️ SZÍVEK */
 
-    const hearts = [
-        "❤️",
-        "❤️‍🩹",
-        "💕",
-        "💗",
-        "💖",
-        "💓"
-    ];
-
-
-    for (let i = 0; i < 35; i++) {
-
-        const heart =
-            document.createElement("span");
-
-        heart.className =
-            "anna-explosion";
-
-        heart.textContent =
-            hearts[
-                Math.floor(
-                    Math.random() *
-                    hearts.length
-                )
+            const hearts = [
+                "❤️",
+                "❤️‍🩹",
+                "💕",
+                "💗",
+                "💖",
+                "💓"
             ];
 
-        heart.style.left =
-            x + "px";
 
-        heart.style.top =
-            y + "px";
+            for (let i = 0; i < 35; i++) {
 
+                const heart =
+                    document.createElement("span");
 
-        const angle =
-            Math.random() *
-            Math.PI * 2;
+                heart.className =
+                    "anna-explosion";
 
-        const distance =
-            100 +
-            Math.random() * 350;
+                heart.textContent =
+                    hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                    ];
 
+                heart.style.left =
+                    x + "px";
 
-        heart.style.setProperty(
-            "--anna-x",
-            Math.cos(angle) *
-            distance + "px"
-        );
-
-        heart.style.setProperty(
-            "--anna-y",
-            Math.sin(angle) *
-            distance + "px"
-        );
-
-        heart.style.setProperty(
-            "--anna-rotate",
-            Math.random() *
-            720 - 360 + "deg"
-        );
+                heart.style.top =
+                    y + "px";
 
 
-        document.body.appendChild(
-            heart
-        );
+                const angle =
+                    Math.random() *
+                    Math.PI * 2;
+
+                const distance =
+                    100 +
+                    Math.random() * 350;
 
 
-        setTimeout(() => {
-            heart.remove();
-        }, 1600);
+                heart.style.setProperty(
+                    "--anna-x",
+                    Math.cos(angle) *
+                    distance + "px"
+                );
 
-    }
+                heart.style.setProperty(
+                    "--anna-y",
+                    Math.sin(angle) *
+                    distance + "px"
+                );
 
-
-
-    /* 🔴 PIROS FILMES FRÖCCSENÉS */
-
-    for (let i = 0; i < 45; i++) {
-
-        const splat =
-            document.createElement("span");
-
-
-        splat.className =
-            "anna-blood-explosion";
-
-
-        splat.style.left =
-            x + "px";
-
-        splat.style.top =
-            y + "px";
+                heart.style.setProperty(
+                    "--anna-rotate",
+                    Math.random() *
+                    720 - 360 + "deg"
+                );
 
 
-        const angle =
-            Math.random() *
-            Math.PI * 2;
+                document.body.appendChild(
+                    heart
+                );
 
 
-        const distance =
-            80 +
-            Math.random() * 300;
+                setTimeout(() => {
+                    heart.remove();
+                }, 1600);
+
+            }
 
 
-        splat.style.setProperty(
-            "--blood-x",
-            Math.cos(angle) *
-            distance + "px"
-        );
+
+            /* 🔴 PIROS FILMES FRÖCCSENÉS */
+
+            for (let i = 0; i < 45; i++) {
+
+                const splat =
+                    document.createElement("span");
 
 
-        splat.style.setProperty(
-            "--blood-y",
-            Math.sin(angle) *
-            distance + "px"
-        );
+                splat.className =
+                    "anna-blood-explosion";
 
 
-        const size =
-            5 +
-            Math.random() * 20;
+                splat.style.left =
+                    x + "px";
+
+                splat.style.top =
+                    y + "px";
 
 
-        splat.style.width =
-            size + "px";
-
-        splat.style.height =
-            size + "px";
+                const angle =
+                    Math.random() *
+                    Math.PI * 2;
 
 
-        document.body.appendChild(
-            splat
-        );
+                const distance =
+                    80 +
+                    Math.random() * 300;
 
 
-        setTimeout(() => {
-            splat.remove();
-        }, 1300);
+                splat.style.setProperty(
+                    "--blood-x",
+                    Math.cos(angle) *
+                    distance + "px"
+                );
 
-    }
 
-}
+                splat.style.setProperty(
+                    "--blood-y",
+                    Math.sin(angle) *
+                    distance + "px"
+                );
+
+
+                const size =
+                    5 +
+                    Math.random() * 20;
+
+
+                splat.style.width =
+                    size + "px";
+
+                splat.style.height =
+                    size + "px";
+
+
+                document.body.appendChild(
+                    splat
+                );
+
+
+                setTimeout(() => {
+                    splat.remove();
+                }, 1300);
+
+            }
+
+        }
 
 
     </script>
