@@ -1,706 +1,416 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Filmek 🎬</title>
-
-    <link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filmek 🎬</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
 
-    <!-- ==============================
-         NAVBAR
-    ============================== -->
+        <div class="nav-links">
 
-    <div class="nav-links">
+            <div class="nav-left">
+                <a href="index.html">Roblox</a>
+                <a href="rolam.html">Mucikanak</a>
+                <a href="ajandekok.html">Ajandekok</a>
+                <a href="filmek.html">Filmek</a>
+            </div>
 
-        <div class="nav-left">
-            <a href="index.html">Roblox</a>
-            <a href="rolam.html">Mucikanak</a>
-            <a href="ajandekok.html">Ajandekok</a>
-            <a href="filmek.html">Filmek</a>
+            <div class="nav-right">
+                <a href="login.html" id="loginLink">
+                    💗 Bejelentkezés
+                </a>
+            </div>
+
         </div>
 
-        <div class="nav-right">
+        <div class="flowers">
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌷</span>
+            <span class="flower">🌸</span>
+            <span class="flower">🌺</span>
+        </div>
 
-            <a href="login.html" id="loginLink">
-                💗 Bejelentkezés
-            </a>
+        <div id="loader">
+            <div class="heart">💗</div>
+        </div>
 
-  
+        <div class="content"></div>
+
+<main class="film-page">
+
+    <h1 class="film-page-title">🎬 Filmek 🎬</h1>
+    <p class="film-page-subtitle">A filmek amiket láttunk együtt 💗</p>
+
+    <div class="film-card-wrap">
+
+        <div class="film-card-new">
+            <div class="film-card-photo">
+                <img src="hitmanbodyguards.jpg" alt="Sokkal több mint testőr">
+            </div>
+
+            <div class="film-card-content">
+                <span class="film-card-tag">💗 Első közös film</span>
+
+                <h2>Sokkal több mint testőr</h2>
+
+                <p>Ezt a filmet láttuk először 🥰</p>
+
+                <button class="film-memory-button"
+                    data-title="Sokkal több mint testőr"
+                    data-message="Az első film amit együtt néztünk picit összevesztünk közben, de nagyon élveztem és nagyon aranyos voltál ahogy nézted és nagyon cuki vagy hogy abba a pulcsiba vagy amit adtam, és 🥰köszönöm🥰 hogy Lilivel alszol, nagyon várom hogy szombaton veled legyek remélem te is 🥰muci🥰">
+                    💗 Üzenet megnyitása
+                </button>
+            </div>
+        </div>
+
+        <div class="film-card-new anna-card">
+
+            <div class="anna-splatter anna-splatter-1"></div>
+            <div class="anna-splatter anna-splatter-2"></div>
+            <div class="anna-splatter anna-splatter-3"></div>
+            <div class="anna-splatter anna-splatter-4"></div>
+
+            <div class="film-card-photo">
+                <img src="Anna.jpg" alt="Anna">
+            </div>
+
+            <div class="film-card-content">
+                <span class="film-card-tag anna-tag">❤️‍🩹 Második közös film</span>
+
+                <h2>Anna</h2>
+
+                <p>Masodik film amit lattunk🥰</p>
+
+                <button class="film-memory-button anna-button"
+                    data-title="Anna"
+                    data-message="🩸🥰Ezt a filmet lattuk masodjara, elsore bealudtam de arrol nem beszelunk😴. Nagyon tetszett, remélem még sok filmet nézünk🩸🥰">
+                    💗 Üzenet megnyitása
+                </button>
+            </div>
+        </div>
+
+        <div class="film-card-new third-film-card">
+
+            <div class="third-film-decoration decoration-1">🎬</div>
+            <div class="third-film-decoration decoration-2">💥</div>
+            <div class="third-film-decoration decoration-3">✨</div>
+            <div class="third-film-decoration decoration-4">⭐</div>
+            <div class="third-film-decoration decoration-5">🎬</div>
+            <div class="third-film-decoration decoration-6">💥</div>
+            <div class="third-film-decoration decoration-7">✨</div>
+            <div class="third-film-decoration decoration-8">⭐</div>
+
+            <div class="film-card-photo">
+                <img src="noiszervek.jpg" alt="Női szervek">
+            </div>
+
+            <div class="film-card-content">
+                <span class="film-card-tag third-film-tag">🎬 Harmadik közös film</span>
+
+                <h2>Női szervek</h2>
+
+                <p>Harmadik film amit lattunk 🥰</p>
+
+                <button class="film-memory-button third-film-button"
+                    data-title="Női szervek"
+                    data-message="🥰🥰Az első film amit közösen néztünk mucika, csak egy részét de úgy sokkkal jobb volt🥰🥰, nagyon élveztem legjobb filmeket tudod🥰🥰.">
+                    💗 Üzenet megnyitása
+                </button>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<div class="film-memory-overlay" id="filmMemory">
+
+    <button class="film-close" id="filmClose">×</button>
+
+    <div class="film-memory-box">
+
+        <div class="film-big-photo">
+            <img id="filmPopupImage" src="" alt="Film">
+        </div>
+
+        <div class="film-memory-text">
+
+            <div class="film-memory-hearts">
+                💗 ✨ 💕 ✨ 💗
+            </div>
+
+            <h2 id="filmPopupTitle"></h2>
+
+            <p id="filmPopupMessage"></p>
 
         </div>
 
     </div>
+</div>
 
-    <!-- ==============================
-         VIRÁGOK
-    ============================== -->
+<script>
+setTimeout(function() {
+    const loader = document.getElementById("loader");
 
-    <div class="flowers">
+    if (loader) {
+        loader.classList.add("loader-hidden");
 
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌺</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌺</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌺</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌺</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌷</span>
-        <span class="flower">🌸</span>
-        <span class="flower">🌺</span>
+        setTimeout(function() {
+            loader.remove();
+        }, 700);
+    }
+}, 2000);
 
-    </div>
+const filmButtons = document.querySelectorAll(".film-memory-button");
+const filmMemory = document.getElementById("filmMemory");
+const filmClose = document.getElementById("filmClose");
+const filmPopupImage = document.getElementById("filmPopupImage");
+const filmPopupTitle = document.getElementById("filmPopupTitle");
+const filmPopupMessage = document.getElementById("filmPopupMessage");
 
+filmButtons.forEach(function(button) {
 
+    button.addEventListener("click", function(event) {
 
+        const cardImage = button.closest(".film-card-new").querySelector(".film-card-photo img");
 
-    <div id="loader">
+        filmPopupImage.src = cardImage.src;
+        filmPopupTitle.textContent = button.dataset.title;
+        filmPopupMessage.textContent = button.dataset.message;
 
-        <div class="heart">
-            💗
-        </div>
+        filmMemory.classList.add("film-memory-open");
 
-    </div>
+        createFilmHearts(event.clientX, event.clientY);
 
-
-
-
-    <main class="film-page">
-
-
-        <h1 class="film-page-title">
-            🎬 Filmek 🎬
-        </h1>
-
-
-        <p class="film-page-subtitle">
-            A filmek amiket láttunk együtt 💗
-        </p>
-
-
-
-        <div class="film-card-wrap">
-
-
-
-
-            <div class="film-card-new">
-
-
-                <div class="film-card-photo">
-
-                    <img src="hitmanbodyguards.jpg" alt="Sokkal több mint testőr">
-
-                </div>
-
-
-                <div class="film-card-content">
-
-
-                    <span class="film-card-tag">
-                        💗 Első közös film
-                    </span>
-
-
-                    <h2>
-                        Sokkal több mint testőr
-                    </h2>
-
-
-                    <p>
-                        Ezt a filmet láttuk először 🥰
-                    </p>
-
-
-                    <button class="film-memory-button" data-image="hitmanbodyguards.jpg"
-                        data-title="Sokkal több mint testőr"
-                        data-message="Az első film amit együtt néztünk picit összevesztünk közben, de nagyon élveztem és nagyon aranyos voltál ahogy nézted és nagyon cuki vagy hogy abba a pulcsiba vagy amit adtam, és 🥰köszönöm🥰 hogy Lilivel alszol, nagyon várom hogy szombaton veled legyek remélem te is 🥰muci🥰">
-
-                        💗 Üzenet megnyitása
-
-                    </button>
-
-
-                </div>
-
-            </div>
-
-
-
-
-            <div class="film-card-new anna-card">
-
-
-
-                <div class="anna-splatter anna-splatter-1"></div>
-
-                <div class="anna-splatter anna-splatter-2"></div>
-
-                <div class="anna-splatter anna-splatter-3"></div>
-
-                <div class="anna-splatter anna-splatter-4"></div>
-
-
-
-                <div class="film-card-photo">
-
-                    <img src="Anna.jpg" alt="Anna">
-
-                </div>
-
-
-                <div class="film-card-content">
-
-
-                    <span class="film-card-tag anna-tag">
-                        ❤️‍🩹 Második közös film
-                    </span>
-
-
-                    <h2>
-                        Anna
-                    </h2>
-
-
-                    <p>
-                        Masodik film amit lattunk🥰
-                    </p>
-
-
-                    <button class="film-memory-button anna-button" data-image="anna.jpg" data-title="Anna"
-                        data-message="🩸🥰Ezt a filmet lattuk masodjara, elsore bealudtam de arrol nem beszelunk😴. Nagyon tetszett, remélem még sok filmet nézünk🩸🥰">
-
-                        💗 Üzenet megnyitása
-
-                    </button>
-
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </main>
-
-
-
-    <div class="film-memory-overlay" id="filmMemory">
-
-
-        <button class="film-close" id="filmClose">
-
-            ×
-
-        </button>
-
-
-
-        <div class="film-memory-box">
-
-
-            <div class="film-big-photo">
-
-                <img id="filmPopupImage" src="" alt="Film">
-
-            </div>
-
-
-
-            <div class="film-memory-text">
-
-
-                <div class="film-memory-hearts">
-                    💗 ✨ 💕 ✨ 💗 🩸
-                </div>
-
-
-                <h2 id="filmPopupTitle">
-                    🩸🥰Ezt a filmet lattuk masodjara, elsore bealudtam de arrol nem beszelunk😴. Nagyon tetszett,
-                    remélem még sok filmet nézünk🩸🥰
-                </h2>
-
-
-                <p id="filmPopupMessage">
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-
-
-    <script>
-
-
-        const filmButtons =
-            document.querySelectorAll(
-                ".film-memory-button"
-            );
-
-
-        const filmMemory =
-            document.getElementById(
-                "filmMemory"
-            );
-
-
-        const filmClose =
-            document.getElementById(
-                "filmClose"
-            );
-
-
-        const filmPopupImage =
-            document.getElementById(
-                "filmPopupImage"
-            );
-
-
-        const filmPopupTitle =
-            document.getElementById(
-                "filmPopupTitle"
-            );
-
-
-        const filmPopupMessage =
-            document.getElementById(
-                "filmPopupMessage"
-            );
-
-
-
-
-        filmButtons.forEach(
-            function (button) {
-
-
-                button.addEventListener(
-                    "click",
-                    function (event) {
-
-
-
-                        const cardImage = button
-                            .closest(".film-card-new")
-                            .querySelector(".film-card-photo img");
-
-                        filmPopupImage.src = cardImage.src;
-
-
-                        filmPopupTitle.textContent =
-                            button.dataset.title;
-
-
-                        filmPopupMessage.textContent =
-                            button.dataset.message;
-
-
-
-                        /*
-                         * Popup megnyitása
-                         */
-
-                        filmMemory.classList.add(
-                            "film-memory-open"
-                        );
-
-
-
-
-                        createFilmHearts(
-                            event.clientX,
-                            event.clientY
-                        );
-
-
-
-
-                        if (
-                            button.classList.contains(
-                                "anna-button"
-                            )
-                        ) {
-
-                            createAnnaExplosion(
-                                event.clientX,
-                                event.clientY
-                            );
-
-                        }
-
-
-                    }
-                );
-
-
-            }
-        );
-
-
-
-
-        filmClose.addEventListener(
-            "click",
-            function () {
-
-                filmMemory.classList.remove(
-                    "film-memory-open"
-                );
-
-            }
-        );
-
-
-
-
-        filmMemory.addEventListener(
-            "click",
-            function (event) {
-
-
-                if (
-                    event.target === filmMemory
-                ) {
-
-                    filmMemory.classList.remove(
-                        "film-memory-open"
-                    );
-
-                }
-
-
-            }
-        );
-
-
-
-        /* ==============================
-           ESC GOMB
-        ============================== */
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    filmMemory.classList.remove(
-                        "film-memory-open"
-                    );
-
-                }
-
-
-            }
-        );
-
-
-
-
-        function createFilmHearts(x, y) {
-
-
-            const hearts = [
-
-                "💗",
-                "💖",
-                "💕",
-                "💓",
-                "💞",
-                "✨",
-                "🌸",
-                "💘"
-
-            ];
-
-
-
-            for (
-                let i = 0;
-                i < 60;
-                i++
-            ) {
-
-
-                const heart =
-                    document.createElement(
-                        "span"
-                    );
-
-
-                heart.className =
-                    "film-flying-heart";
-
-
-                heart.innerHTML =
-                    hearts[
-                    Math.floor(
-                        Math.random() *
-                        hearts.length
-                    )
-                    ];
-
-
-
-                heart.style.left =
-                    x + "px";
-
-
-                heart.style.top =
-                    y + "px";
-
-
-
-                const angle =
-                    Math.random() *
-                    Math.PI * 2;
-
-
-                const distance =
-                    100 +
-                    Math.random() * 350;
-
-
-
-                heart.style.setProperty(
-                    "--heart-x",
-                    Math.cos(angle) *
-                    distance +
-                    "px"
-                );
-
-
-                heart.style.setProperty(
-                    "--heart-y",
-                    Math.sin(angle) *
-                    distance +
-                    "px"
-                );
-
-
-                heart.style.setProperty(
-                    "--heart-rotation",
-                    Math.random() *
-                    720 -
-                    360 +
-                    "deg"
-                );
-
-
-                heart.style.fontSize =
-                    15 +
-                    Math.random() *
-                    30 +
-                    "px";
-
-
-
-                document.body.appendChild(
-                    heart
-                );
-
-
-
-                setTimeout(
-                    function () {
-
-                        heart.remove();
-
-                    },
-                    1800
-                );
-
-
-            }
-
-
+        if (button.classList.contains("anna-button")) {
+            createAnnaExplosion(event.clientX, event.clientY);
         }
 
-
-
-
-        function createAnnaExplosion(x, y) {
-
-            /* ❤️ SZÍVEK */
-
-            const hearts = [
-                "❤️",
-                "❤️‍🩹",
-                "💕",
-                "💗",
-                "💖",
-                "💓"
-            ];
-
-
-            for (let i = 0; i < 35; i++) {
-
-                const heart =
-                    document.createElement("span");
-
-                heart.className =
-                    "anna-explosion";
-
-                heart.textContent =
-                    hearts[
-                    Math.floor(
-                        Math.random() *
-                        hearts.length
-                    )
-                    ];
-
-                heart.style.left =
-                    x + "px";
-
-                heart.style.top =
-                    y + "px";
-
-
-                const angle =
-                    Math.random() *
-                    Math.PI * 2;
-
-                const distance =
-                    100 +
-                    Math.random() * 350;
-
-
-                heart.style.setProperty(
-                    "--anna-x",
-                    Math.cos(angle) *
-                    distance + "px"
-                );
-
-                heart.style.setProperty(
-                    "--anna-y",
-                    Math.sin(angle) *
-                    distance + "px"
-                );
-
-                heart.style.setProperty(
-                    "--anna-rotate",
-                    Math.random() *
-                    720 - 360 + "deg"
-                );
-
-
-                document.body.appendChild(
-                    heart
-                );
-
-
-                setTimeout(() => {
-                    heart.remove();
-                }, 1600);
-
-            }
-
-
-
-            /* 🔴 PIROS FILMES FRÖCCSENÉS */
-
-            for (let i = 0; i < 45; i++) {
-
-                const splat =
-                    document.createElement("span");
-
-
-                splat.className =
-                    "anna-blood-explosion";
-
-
-                splat.style.left =
-                    x + "px";
-
-                splat.style.top =
-                    y + "px";
-
-
-                const angle =
-                    Math.random() *
-                    Math.PI * 2;
-
-
-                const distance =
-                    80 +
-                    Math.random() * 300;
-
-
-                splat.style.setProperty(
-                    "--blood-x",
-                    Math.cos(angle) *
-                    distance + "px"
-                );
-
-
-                splat.style.setProperty(
-                    "--blood-y",
-                    Math.sin(angle) *
-                    distance + "px"
-                );
-
-
-                const size =
-                    5 +
-                    Math.random() * 20;
-
-
-                splat.style.width =
-                    size + "px";
-
-                splat.style.height =
-                    size + "px";
-
-
-                document.body.appendChild(
-                    splat
-                );
-
-
-                setTimeout(() => {
-                    splat.remove();
-                }, 1300);
-
-            }
-
+        if (button.classList.contains("third-film-button")) {
+            createThirdFilmExplosion(event.clientX, event.clientY);
         }
- 
+    });
+});
 
+filmClose.addEventListener("click", function() {
+    filmMemory.classList.remove("film-memory-open");
+});
 
-    </script>
+filmMemory.addEventListener("click", function(event) {
+
+    if (event.target === filmMemory) {
+        filmMemory.classList.remove("film-memory-open");
+    }
+
+});
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        filmMemory.classList.remove("film-memory-open");
+    }
+
+});
+
+function createFilmHearts(x, y) {
+
+    const hearts = [
+        "💗",
+        "💖",
+        "💕",
+        "💓",
+        "💞",
+        "✨",
+        "🌸",
+        "💘"
+    ];
+
+    for (let i = 0; i < 60; i++) {
+
+        const heart = document.createElement("span");
+
+        heart.className = "film-flying-heart";
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 350;
+
+        heart.style.setProperty(
+            "--heart-x",
+            Math.cos(angle) * distance + "px"
+        );
+
+        heart.style.setProperty(
+            "--heart-y",
+            Math.sin(angle) * distance + "px"
+        );
+
+        heart.style.setProperty(
+            "--heart-rotation",
+            Math.random() * 720 - 360 + "deg"
+        );
+
+        heart.style.fontSize = 15 + Math.random() * 30 + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 1800);
+    }
+}
+
+function createAnnaExplosion(x, y) {
+
+    const hearts = [
+        "❤️",
+        "❤️‍🩹",
+        "💕",
+        "💗",
+        "💖",
+        "💓"
+    ];
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart = document.createElement("span");
+
+        heart.className = "anna-explosion";
+        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 350;
+
+        heart.style.setProperty(
+            "--anna-x",
+            Math.cos(angle) * distance + "px"
+        );
+
+        heart.style.setProperty(
+            "--anna-y",
+            Math.sin(angle) * distance + "px"
+        );
+
+        heart.style.setProperty(
+            "--anna-rotate",
+            Math.random() * 720 - 360 + "deg"
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 1600);
+    }
+
+    for (let i = 0; i < 45; i++) {
+
+        const splat = document.createElement("span");
+
+        splat.className = "anna-blood-explosion";
+
+        splat.style.left = x + "px";
+        splat.style.top = y + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 80 + Math.random() * 300;
+
+        splat.style.setProperty(
+            "--blood-x",
+            Math.cos(angle) * distance + "px"
+        );
+
+        splat.style.setProperty(
+            "--blood-y",
+            Math.sin(angle) * distance + "px"
+        );
+
+        const size = 5 + Math.random() * 20;
+
+        splat.style.width = size + "px";
+        splat.style.height = size + "px";
+
+        document.body.appendChild(splat);
+
+        setTimeout(function() {
+            splat.remove();
+        }, 1300);
+    }
+}
+
+function createThirdFilmExplosion(x, y) {
+
+    const decorations = [
+        "🎬",
+        "💥",
+        "✨",
+        "⭐",
+        "💗",
+        "🌸"
+    ];
+
+    for (let i = 0; i < 45; i++) {
+
+        const item = document.createElement("span");
+
+        item.className = "third-film-explosion";
+        item.textContent = decorations[Math.floor(Math.random() * decorations.length)];
+
+        item.style.left = x + "px";
+        item.style.top = y + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 350;
+
+        item.style.setProperty(
+            "--third-x",
+            Math.cos(angle) * distance + "px"
+        );
+
+        item.style.setProperty(
+            "--third-y",
+            Math.sin(angle) * distance + "px"
+        );
+
+        item.style.setProperty(
+            "--third-rotate",
+            Math.random() * 720 - 360 + "deg"
+        );
+
+        item.style.fontSize = 18 + Math.random() * 25 + "px";
+
+        document.body.appendChild(item);
+
+        setTimeout(function() {
+            item.remove();
+        }, 1700);
+    }
+}
+</script>
 
 </body>
-
 </html>
