@@ -2969,10 +2969,8 @@ h1 {
     position: fixed;
     left: 50%;
     top: 50%;
-    width: min(850px, 90vw);
-    min-height: 520px;
-    max-height: 80vh;
-    overflow-y: auto;
+    width: min(850px, calc(100vw - 30px));
+    height: min(650px, calc(100vh - 30px));
     background: linear-gradient(145deg, #fffaff, #fff0f7);
     border-radius: 30px;
     transform: translate(-50%, -50%) scale(0.3);
@@ -2986,18 +2984,21 @@ h1 {
     box-shadow:
         0 25px 80px rgba(216, 80, 135, 0.3),
         0 0 0 4px rgba(255, 190, 215, 0.5);
-    padding: 60px;
+    padding: 50px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .love-paper-content {
-    min-height: 400px;
+    width: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #89516d;
+    box-sizing: border-box;
 }
 
 .love-paper-hearts {
@@ -3007,14 +3008,15 @@ h1 {
 }
 
 .love-paper-content h2 {
-    margin: 10px 0 30px;
+    margin: 10px 0 25px;
     color: #d86697;
     font-size: 38px;
 }
 
 .love-paper-content p {
+    width: 100%;
     max-width: 650px;
-    margin: 12px auto;
+    margin: 10px auto;
     font-size: 20px;
     line-height: 1.8;
 }
@@ -3026,7 +3028,7 @@ h1 {
 }
 
 .love-paper-bottom {
-    margin-top: 30px;
+    margin-top: 25px;
     color: #ee8eb5;
     font-size: 25px;
     letter-spacing: 8px;
@@ -3034,19 +3036,83 @@ h1 {
 
 .love-close {
     position: absolute;
-    top: 18px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
+    top: 15px;
+    right: 15px;
+    width: 46px;
+    height: 46px;
     border: none;
     border-radius: 50%;
     background: #ffd0e3;
     color: #c65382;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1;
     cursor: pointer;
     z-index: 100001;
-    transition: 0.25s ease;
+}
+
+.love-envelope.open .love-paper {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 600px) {
+
+    .love-letter {
+        margin: 70px 0 90px;
+    }
+
+    .love-envelope {
+        width: 280px;
+        height: 185px;
+    }
+
+    .love-paper {
+        width: calc(100vw - 24px);
+        height: calc(100vh - 24px);
+        max-height: none;
+        border-radius: 22px;
+        padding: 55px 22px 30px;
+    }
+
+    .love-paper-content {
+        min-height: 100%;
+        justify-content: center;
+    }
+
+    .love-paper-hearts {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .love-paper-content h2 {
+        font-size: 27px;
+        margin: 8px 0 20px;
+    }
+
+    .love-paper-content p {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .love-paper-content p:first-of-type {
+        font-size: 30px;
+    }
+
+    .love-paper-bottom {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .love-close {
+        top: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+        font-size: 25px;
+    }
 }
 
 .love-close:hover {
