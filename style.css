@@ -1751,14 +1751,10 @@ h1 {
         30px 0 8px;
 
     text-shadow:
-        0 4px 12px
-        rgba(216, 102, 151, 0.2);
+        0 4px 12px rgba(216, 102, 151, 0.2);
 
     animation:
-        filmTitleFloat
-        3s
-        ease-in-out
-        infinite;
+        filmTitleFloat 3s ease-in-out infinite;
 }
 
 
@@ -1814,8 +1810,7 @@ h1 {
     overflow: hidden;
 
     box-shadow:
-        0 15px 40px
-        rgba(210, 90, 140, 0.2);
+        0 15px 40px rgba(210, 90, 140, 0.2);
 
     transition:
         transform 0.4s ease,
@@ -1826,12 +1821,10 @@ h1 {
 .film-card-new:hover {
 
     transform:
-        translateY(-12px)
-        rotate(1deg);
+        translateY(-12px) rotate(1deg);
 
     box-shadow:
-        0 25px 60px
-        rgba(210, 90, 140, 0.3);
+        0 25px 60px rgba(210, 90, 140, 0.3);
 }
 
 
@@ -1846,11 +1839,9 @@ h1 {
     overflow: hidden;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #ffddeb,
-            #fff6fa
-        );
+            #fff6fa);
 }
 
 
@@ -1869,8 +1860,7 @@ h1 {
 }
 
 
-.film-card-new:hover
-.film-card-photo img {
+.film-card-new:hover .film-card-photo img {
 
     transform:
         scale(1.06);
@@ -1953,11 +1943,9 @@ h1 {
         25px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #ff9fc7,
-            #ff70ad
-        );
+            #ff70ad);
 
     color:
         white;
@@ -1972,8 +1960,7 @@ h1 {
         pointer;
 
     box-shadow:
-        0 8px 20px
-        rgba(230, 90, 150, 0.25);
+        0 8px 20px rgba(230, 90, 150, 0.25);
 
     transition:
         0.25s ease;
@@ -1986,8 +1973,7 @@ h1 {
         scale(1.08);
 
     box-shadow:
-        0 12px 30px
-        rgba(230, 90, 150, 0.4);
+        0 12px 30px rgba(230, 90, 150, 0.4);
 }
 
 
@@ -2023,12 +2009,10 @@ h1 {
         25px;
 
     background:
-        rgba(
-            255,
+        rgba(255,
             210,
             230,
-            0.78
-        );
+            0.78);
 
     backdrop-filter:
         blur(18px);
@@ -2075,12 +2059,10 @@ h1 {
         15px;
 
     background:
-        rgba(
-            255,
+        rgba(255,
             250,
             253,
-            0.97
-        );
+            0.97);
 
     border:
         3px solid #ff9fc7;
@@ -2089,13 +2071,10 @@ h1 {
         32px;
 
     box-shadow:
-        0 30px 90px
-        rgba(
-            180,
+        0 30px 90px rgba(180,
             70,
             120,
-            0.35
-        );
+            0.35);
 
     transform:
         scale(1);
@@ -2105,8 +2084,7 @@ h1 {
 }
 
 
-.film-memory-open
-.film-memory-box {
+.film-memory-open .film-memory-box {
 
     transform:
         scale(1);
@@ -2180,10 +2158,7 @@ h1 {
         8px;
 
     animation:
-        filmHeartFloat
-        2s
-        ease-in-out
-        infinite;
+        filmHeartFloat 2s ease-in-out infinite;
 }
 
 
@@ -2279,13 +2254,10 @@ h1 {
         pointer;
 
     box-shadow:
-        0 8px 20px
-        rgba(
-            210,
+        0 8px 20px rgba(210,
             80,
             140,
-            0.3
-        );
+            0.3);
 
     transition:
         0.25s ease;
@@ -2295,8 +2267,7 @@ h1 {
 .film-close:hover {
 
     transform:
-        scale(1.15)
-        rotate(10deg);
+        scale(1.15) rotate(10deg);
 
     background:
         #f477ad;
@@ -2317,17 +2288,11 @@ h1 {
         100001;
 
     transform:
-        translate(
-            -50%,
-            -50%
-        )
-        scale(0);
+        translate(-50%,
+            -50%) scale(0);
 
     animation:
-        filmHeartExplosion
-        1.6s
-        ease-out
-        forwards;
+        filmHeartExplosion 1.6s ease-out forwards;
 }
 
 
@@ -2336,11 +2301,8 @@ h1 {
     0% {
 
         transform:
-            translate(
-                -50%,
-                -50%
-            )
-            scale(0);
+            translate(-50%,
+                -50%) scale(0);
 
         opacity:
             0;
@@ -2349,11 +2311,8 @@ h1 {
     15% {
 
         transform:
-            translate(
-                -50%,
-                -50%
-            )
-            scale(1.5);
+            translate(-50%,
+                -50%) scale(1.5);
 
         opacity:
             1;
@@ -2362,20 +2321,8 @@ h1 {
     100% {
 
         transform:
-            translate(
-                calc(
-                    -50% +
-                    var(--heart-x)
-                ),
-                calc(
-                    -50% +
-                    var(--heart-y)
-                )
-            )
-            scale(0.6)
-            rotate(
-                var(--heart-rotation)
-            );
+            translate(calc(-50% + var(--heart-x)),
+                calc(-50% + var(--heart-y))) scale(0.6) rotate(var(--heart-rotation));
 
         opacity:
             0;
@@ -2465,22 +2412,17 @@ h1 {
     height: 95px;
 
     background:
-        radial-gradient(
-            circle at 50% 50%,
+        radial-gradient(circle at 50% 50%,
             #8f0025 0%,
             #b40032 35%,
             #d40045 62%,
-            transparent 70%
-        );
+            transparent 70%);
 
     border-radius:
         52% 48% 61% 39%;
 
     filter:
-        drop-shadow(
-            0 4px 7px
-            rgba(130, 0, 30, 0.3)
-        );
+        drop-shadow(0 4px 7px rgba(130, 0, 30, 0.3));
 
     opacity: 0.95;
 
@@ -2563,8 +2505,7 @@ h1 {
     left: -45px;
 
     transform:
-        rotate(-25deg)
-        scale(0.85);
+        rotate(-25deg) scale(0.85);
 }
 
 
@@ -2574,8 +2515,7 @@ h1 {
     right: -45px;
 
     transform:
-        rotate(35deg)
-        scale(0.7);
+        rotate(35deg) scale(0.7);
 }
 
 
@@ -2585,8 +2525,7 @@ h1 {
     left: -40px;
 
     transform:
-        rotate(55deg)
-        scale(0.62);
+        rotate(55deg) scale(0.62);
 }
 
 
@@ -2596,8 +2535,7 @@ h1 {
     right: -40px;
 
     transform:
-        rotate(-40deg)
-        scale(0.55);
+        rotate(-40deg) scale(0.55);
 }
 
 
@@ -2618,18 +2556,13 @@ h1 {
     z-index: 0;
 
     border:
-        2px solid
-        rgba(190, 0, 50, 0.35);
+        2px solid rgba(190, 0, 50, 0.35);
 
     box-shadow:
-        0 0 25px
-        rgba(190, 0, 50, 0.18);
+        0 0 25px rgba(190, 0, 50, 0.18);
 
     animation:
-        annaRedGlow
-        2.2s
-        ease-in-out
-        infinite;
+        annaRedGlow 2.2s ease-in-out infinite;
 }
 
 
@@ -2639,16 +2572,14 @@ h1 {
     100% {
 
         box-shadow:
-            0 0 20px
-            rgba(190, 0, 50, 0.12);
+            0 0 20px rgba(190, 0, 50, 0.12);
 
     }
 
     50% {
 
         box-shadow:
-            0 0 38px
-            rgba(210, 0, 55, 0.35);
+            0 0 38px rgba(210, 0, 55, 0.35);
 
     }
 
@@ -2657,47 +2588,31 @@ h1 {
 
 
 
-.anna-card:hover
-.anna-splatter-1 {
+.anna-card:hover .anna-splatter-1 {
 
     animation:
-        annaSplash1
-        0.8s
-        ease-in-out
-        infinite alternate;
+        annaSplash1 0.8s ease-in-out infinite alternate;
 }
 
 
-.anna-card:hover
-.anna-splatter-2 {
+.anna-card:hover .anna-splatter-2 {
 
     animation:
-        annaSplash2
-        0.9s
-        ease-in-out
-        infinite alternate;
+        annaSplash2 0.9s ease-in-out infinite alternate;
 }
 
 
-.anna-card:hover
-.anna-splatter-3 {
+.anna-card:hover .anna-splatter-3 {
 
     animation:
-        annaSplash3
-        0.7s
-        ease-in-out
-        infinite alternate;
+        annaSplash3 0.7s ease-in-out infinite alternate;
 }
 
 
-.anna-card:hover
-.anna-splatter-4 {
+.anna-card:hover .anna-splatter-4 {
 
     animation:
-        annaSplash4
-        1s
-        ease-in-out
-        infinite alternate;
+        annaSplash4 1s ease-in-out infinite alternate;
 }
 
 
@@ -2705,14 +2620,12 @@ h1 {
 
     from {
         transform:
-            rotate(-25deg)
-            scale(0.82);
+            rotate(-25deg) scale(0.82);
     }
 
     to {
         transform:
-            rotate(-18deg)
-            scale(1);
+            rotate(-18deg) scale(1);
     }
 
 }
@@ -2722,14 +2635,12 @@ h1 {
 
     from {
         transform:
-            rotate(35deg)
-            scale(0.68);
+            rotate(35deg) scale(0.68);
     }
 
     to {
         transform:
-            rotate(45deg)
-            scale(0.88);
+            rotate(45deg) scale(0.88);
     }
 
 }
@@ -2739,14 +2650,12 @@ h1 {
 
     from {
         transform:
-            rotate(55deg)
-            scale(0.6);
+            rotate(55deg) scale(0.6);
     }
 
     to {
         transform:
-            rotate(65deg)
-            scale(0.78);
+            rotate(65deg) scale(0.78);
     }
 
 }
@@ -2756,14 +2665,12 @@ h1 {
 
     from {
         transform:
-            rotate(-40deg)
-            scale(0.53);
+            rotate(-40deg) scale(0.53);
     }
 
     to {
         transform:
-            rotate(-30deg)
-            scale(0.72);
+            rotate(-30deg) scale(0.72);
     }
 
 }
@@ -2774,23 +2681,88 @@ h1 {
 .anna-button {
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #8f002b,
             #c90042,
-            #ed1455
-        );
+            #ed1455);
 
     box-shadow:
-        0 8px 25px
-        rgba(170, 0, 50, 0.35);
+        0 8px 25px rgba(170, 0, 50, 0.35);
 }
 
 
 .anna-button:hover {
 
     box-shadow:
-        0 12px 35px
-        rgba(190, 0, 55, 0.55);
+        0 12px 35px rgba(190, 0, 55, 0.55);
 
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.profile-link {
+    display: none;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    color: #d45f91;
+    font-weight: bold;
+    padding: 5px 12px 5px 5px;
+    border-radius: 30px;
+    background: rgba(255, 235, 244, 0.95);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.profile-link:hover {
+    transform: scale(1.05);
+    background: #ffe0ec;
+}
+
+.profile-link img {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ff9fc7;
+    display: block;
+}
+
+.profile-link span {
+    display: inline-block;
+    color: #d45f91;
+    font-size: 15px;
+}
+
+@media (max-width: 700px) {
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-left {
+        flex-wrap: wrap;
+    }
+
+    .nav-right {
+        margin-left: 0;
+    }
 }
