@@ -3214,50 +3214,44 @@ h1 {
 
 @media (max-width: 600px) {
 
-    .films-container,
-    .film-container,
-    .films-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 35px !important;
-        width: 100% !important;
-    }
-
     .film-card-new,
+    .anna-card,
     .third-film-card {
-        width: 90% !important;
+        display: block !important;
+        position: relative !important;
+        width: calc(100% - 30px) !important;
         max-width: 380px !important;
-        margin: 0 auto !important;
+        min-width: 0 !important;
+        margin: 0 auto 40px auto !important;
+        box-sizing: border-box !important;
+        float: none !important;
         flex: none !important;
+        transform: none !important;
     }
 
     .film-card-photo {
         width: 100% !important;
+        max-width: 100% !important;
         height: auto !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
     .film-card-photo img {
-        width: 100% !important;
-        height: auto !important;
         display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        box-sizing: border-box !important;
     }
 
     .film-card-content {
-        padding: 25px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    .film-card-content h2 {
-        font-size: 24px !important;
-    }
-
-    .film-card-content p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-    }
-
-    .third-film-card {
-        overflow: visible !important;
+    .film-card-new:last-child {
         margin-bottom: 20px !important;
     }
 }
