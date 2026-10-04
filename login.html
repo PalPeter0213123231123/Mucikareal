@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mucika belépése 💗</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .login-page {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 35px 20px 80px;
+            box-sizing: border-box;
+        }
+
+        .login-box {
+            position: relative;
+            width: min(430px, 92vw);
+            padding: 35px 30px;
+            background: rgba(255, 250, 253, 0.94);
+            border: 3px solid #ffafd0;
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(210, 90, 140, 0.25);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-heart {
+            font-size: 60px;
+            animation: loginHeart 1.8s ease-in-out infinite;
+            margin-bottom: 5px;
+        }
+
+        @keyframes loginHeart {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .login-box h1 {
+            color: #d86697;
+            font-size: 32px;
+            margin: 5px 0 8px;
+        }
+
+        .login-subtitle {
+            color: #9b5b78;
+            margin-bottom: 30px;
+        }
+
+        .login-label {
+            display: block;
+            text-align: left;
+            color: #b04f7b;
+            font-weight: bold;
+            margin: 15px 0 7px;
+        }
+
+        .login-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 17px;
+            border: 2px solid #ffc1d9;
+            border-radius: 18px;
+            background: #fff8fb;
+            color: #8f4c6d;
+            font-size: 15px;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        .login-input:focus {
+            border-color: #ff82b6;
+            box-shadow: 0 0 0 4px rgba(255, 130, 182, 0.12);
+        }
+
+        .password-hint {
+            margin-top: 8px;
+            padding: 10px 14px;
+            border-radius: 15px;
+            background: #ffe5ef;
+            color: #a34f75;
+            font-size: 13px;
+        }
+
+        .password-hint strong {
+            color: #d14f88;
+        }
+
+        .love-question {
+            margin-top: 28px;
+            padding: 20px 15px;
+            border-radius: 22px;
+            background: #fff0f6;
+        }
+
+        .love-question h2 {
+            color: #d45f91;
+            font-size: 21px;
+            margin: 0 0 18px;
+        }
+
+        .answer-area {
+            position: relative;
+            min-height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .answer-button {
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .yes-button {
+            background: linear-gradient(135deg, #ff9fc7, #ff6fac);
+            color: white;
+            box-shadow: 0 7px 18px rgba(230, 90, 150, 0.25);
+        }
+
+        .yes-button:hover {
+            transform: scale(1.08);
+        }
+
+        .no-button {
+            background: #eeeeee;
+            color: #777;
+        }
+
+        .wrong-answer {
+            min-height: 23px;
+            margin-top: 10px;
+            color: #d13c68;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .login-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ff9fc7, #ff70ad);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 9px 25px rgba(230, 90, 150, 0.3);
+            transition: 0.25s ease;
+        }
+
+        .login-button:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .login-error {
+            min-height: 22px;
+            margin-top: 12px;
+            color: #d13c68;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .login-success {
+            margin-top: 15px;
+            color: #d45f91;
+            font-weight: bold;
+        }
+
+        /* Sikeres belépésnél megjelenő szívek */
+        .success-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99999;
+            animation: successHeart 1.5s ease-out forwards;
+        }
+
+        @keyframes successHeart {
+            0% {
+                transform: translateY(0) scale(0);
+                opacity: 0;
+            }
+
+            20% {
+                transform: translateY(-20px) scale(1.3);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-250px) translateX(var(--heart-move)) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* NEM gomb szívei */
+        .broken-heart {
+            position: fixed;
+            z-index: 100000;
+            pointer-events: none;
+            font-size: 25px;
+            transform: translate(-50%, -50%) scale(0);
+            animation: brokenHeartExplosion 1.5s ease-out forwards;
+        }
+
+        @keyframes brokenHeartExplosion {
+            0% {
+                transform: translate(-50%, -50%) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                transform: translate(-50%, -50%) scale(1.4) rotate(-10deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translate(
+                        calc(-50% + var(--broken-x)),
+                        calc(-50% + var(--broken-y))
+                    )
+                    scale(0.7)
+                    rotate(var(--broken-rotate));
+                opacity: 0;
+            }
+        }
+
+        /* KÉPES OVERLAY */
+        .login-photo-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 999999;
+            background: rgba(255, 190, 215, 0.94);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            gap: 20px;
+            padding: 25px;
+            box-sizing: border-box;
+
+            animation: loginPhotoAppear 0.6s ease;
+        }
+
+        .login-photo-overlay img {
+            width: min(85vw, 550px);
+            max-height: 65vh;
+            object-fit: contain;
+
+            border-radius: 25px;
+            border: 6px solid white;
+
+            box-shadow:
+                0 15px 50px rgba(180, 70, 120, 0.35);
+
+            position: relative;
+            z-index: 1000001;
+        }
+
+        .login-photo-text {
+            color: #d45f91;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+
+            position: relative;
+            z-index: 1000001;
+        }
+
+        /* RENGETEG SZÍV A TELJES KÉPERNYŐN */
+        .login-photo-heart {
+            position: fixed;
+            z-index: 1000000;
+            pointer-events: none;
+            user-select: none;
+
+            transform: translate(-50%, -50%) scale(0);
+
+            animation:
+                loginPhotoHeart
+                3.5s
+                ease-out
+                forwards;
+        }
+
+        @keyframes loginPhotoHeart {
+
+            0% {
+                opacity: 0;
+                transform:
+                    translate(-50%, -50%)
+                    scale(0)
+                    rotate(0deg);
+            }
+
+            10% {
+                opacity: 1;
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.4)
+                    rotate(-10deg);
+            }
+
+            100% {
+                opacity: 0;
+
+                transform:
+                    translate(
+                        calc(-50% + var(--heart-x)),
+                        calc(-50% + var(--heart-y))
+                    )
+                    scale(0.7)
+                    rotate(var(--heart-rotate));
+            }
+        }
+
+        @keyframes loginPhotoAppear {
+
+            from {
+                opacity: 0;
+                transform: scale(0.75);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .login-page {
+                justify-content: center;
+                align-items: center;
+                padding: 25px 15px 60px;
+            }
+
+            .login-box {
+                width: 92vw;
+                padding: 30px 20px;
+            }
+
+            .login-box h1 {
+                font-size: 27px;
+            }
+
+            .login-photo-text {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-links">
+        <a href="index.html">Roblox</a>
+        <a href="rolam.html">Mucikanak</a>
+        <a href="ajandekok.html">Ajandekok</a>
+        <a href="filmek.html">Filmek</a>
+    </div>
+
+    <div class="flowers">
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌺</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌺</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌺</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌺</span>
+        <span class="flower">🌸</span>
+        <span class="flower">🌷</span>
+    </div>
+
+    <div id="loader">
+        <div class="heart">💗</div>
+    </div>
+
+    <main class="login-page">
+
+        <div class="login-box">
+
+            <div class="login-heart">
+                💗
+            </div>
+
+            <h1>Mucika belépése</h1>
+
+            <p class="login-subtitle">
+                Itt csak Mucika léphet be 🥰
+            </p>
+
+            <label class="login-label">
+                Felhasználónév
+            </label>
+
+            <input
+                id="username"
+                class="login-input"
+                type="text"
+                placeholder="Írd be a felhasználóneved"
+                autocomplete="off"
+            >
+
+            <label class="login-label">
+                Jelszó
+            </label>
+
+            <input
+                id="password"
+                class="login-input"
+                type="password"
+                placeholder="Írd be a jelszavad"
+            >
+
+            <div class="password-hint">
+                💡 Segítség:
+                <strong>Amin a leggyakrabban hívsz</strong>
+            </div>
+
+            <div class="love-question">
+
+                <h2>
+                    Szeretsz engem? 💗
+                </h2>
+
+                <div class="answer-area">
+
+                    <button
+                        type="button"
+                        class="answer-button yes-button"
+                        id="yesButton"
+                    >
+                        Igen 💗
+                    </button>
+
+                    <button
+                        type="button"
+                        class="answer-button no-button"
+                        id="noButton"
+                    >
+                        Nem
+                    </button>
+
+                </div>
+
+                <div
+                    class="wrong-answer"
+                    id="wrongAnswer"
+                ></div>
+
+            </div>
+
+            <button
+                type="button"
+                class="login-button"
+                id="loginButton"
+            >
+                💗 Belépés
+            </button>
+
+            <div
+                class="login-error"
+                id="loginError"
+            ></div>
+
+            <div
+                class="login-success"
+                id="loginSuccess"
+            ></div>
+
+        </div>
+
+    </main>
+
+    <script>
+
+        const correctUsername = "Mucika";
+        const correctPassword = "csicska";
+
+        const username =
+            document.getElementById("username");
+
+        const password =
+            document.getElementById("password");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+        const loginError =
+            document.getElementById("loginError");
+
+        const loginSuccess =
+            document.getElementById("loginSuccess");
+
+        const yesButton =
+            document.getElementById("yesButton");
+
+        const noButton =
+            document.getElementById("noButton");
+
+        const wrongAnswer =
+            document.getElementById("wrongAnswer");
+
+        let loveAnswer = false;
+
+
+        /* IGEN */
+
+        yesButton.addEventListener(
+            "click",
+            function () {
+
+                loveAnswer = true;
+
+                wrongAnswer.textContent =
+                    "Helyes válasz 💗🥰";
+
+                wrongAnswer.style.color =
+                    "#d45f91";
+
+                yesButton.style.transform =
+                    "scale(1.12)";
+
+                setTimeout(function () {
+
+                    yesButton.style.transform =
+                        "";
+
+                }, 300);
+
+            }
+        );
+
+
+        /* NEM */
+
+        noButton.addEventListener(
+            "click",
+            function (event) {
+
+                loveAnswer = false;
+
+                wrongAnswer.textContent =
+                    "Rossz válasz! 💔";
+
+                wrongAnswer.style.color =
+                    "#d13c68";
+
+                createBrokenHearts(
+                    event.clientX,
+                    event.clientY
+                );
+
+                const x =
+                    (Math.random() * 100) - 50;
+
+                const y =
+                    (Math.random() * 60) - 30;
+
+                noButton.style.transform =
+                    `translate(${x}px, ${y}px)`;
+
+            }
+        );
+
+
+        /* BELÉPÉS */
+
+        loginButton.addEventListener(
+            "click",
+            function () {
+
+                loginError.textContent = "";
+                loginSuccess.textContent = "";
+
+
+                if (
+                    username.value.trim() !==
+                    correctUsername
+                ) {
+
+                    loginError.textContent =
+                        "Hibás felhasználónév! 💗";
+
+                    return;
+                }
+
+
+                if (
+                    password.value !==
+                    correctPassword
+                ) {
+
+                    loginError.textContent =
+                        "Hibás jelszó! 💗";
+
+                    return;
+                }
+
+
+                if (!loveAnswer) {
+
+                    loginError.textContent =
+                        "Előbb válaszd az Igen választ! 💗";
+
+                    return;
+                }
+
+
+                loginSuccess.textContent =
+                    "Sikeres belépés! 💗🥰";
+
+
+                /* Kisebb szívrobbanás */
+                createLoginHearts();
+
+
+                /* Kép + RENGETEG szív */
+                showLoginPhoto();
+
+            }
+        );
+
+
+        /* KÉP + 300+ SZÍV */
+
+        function showLoginPhoto() {
+
+            const overlay =
+                document.createElement("div");
+
+            overlay.className =
+                "login-photo-overlay";
+
+
+            overlay.innerHTML = `
+                <img
+                    src="kozoskep.jpg"
+                    alt="Közös kép"
+                >
+
+                <div class="login-photo-text">
+                    💗 Örülök, hogy itt vagy Mucika 💗
+                </div>
+            `;
+
+
+            document.body.appendChild(
+                overlay
+            );
+
+
+            const hearts = [
+                "💗",
+                "💖",
+                "💕",
+                "💓",
+                "💞",
+                "💘",
+                "💝",
+                "💟",
+                "❤️",
+                "🩷",
+                "✨"
+            ];
+
+
+            /*
+             * 350 SZÍV
+             * Az egész képernyőt ellepik.
+             */
+
+            for (
+                let i = 0;
+                i < 350;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement("span");
+
+
+                heart.className =
+                    "login-photo-heart";
+
+
+                heart.textContent =
+                    hearts[
+                        Math.floor(
+                            Math.random() *
+                            hearts.length
+                        )
+                    ];
+
+
+                /* Random hely az egész képernyőn */
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.top =
+                    Math.random() * 100 + "vh";
+
+
+                /* Random repülési irány */
+
+                heart.style.setProperty(
+                    "--heart-x",
+                    (
+                        Math.random() * 1000 -
+                        500
+                    ) + "px"
+                );
+
+
+                heart.style.setProperty(
+                    "--heart-y",
+                    (
+                        Math.random() * 1000 -
+                        500
+                    ) + "px"
+                );
+
+
+                heart.style.setProperty(
+                    "--heart-rotate",
+                    (
+                        Math.random() * 720 -
+                        360
+                    ) + "deg"
+                );
+
+
+                /* Random méret */
+
+                heart.style.fontSize =
+                    (
+                        15 +
+                        Math.random() * 45
+                    ) + "px";
+
+
+                /* Random sebesség */
+
+                heart.style.animationDuration =
+                    (
+                        2.5 +
+                        Math.random() * 2.5
+                    ) + "s";
+
+
+                /* Kicsit szétszórva jelenjenek meg */
+
+                heart.style.animationDelay =
+                    (
+                        Math.random() * 1.2
+                    ) + "s";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function () {
+                        heart.remove();
+                    },
+                    6000
+                );
+
+            }
+
+
+            /* 2,5 mp után index */
+
+            setTimeout(
+                function () {
+
+                    window.location.href =
+                        "index.html";
+
+                },
+                2500
+            );
+
+        }
+
+
+        /* KISEBB SZÍVROBBANÁS */
+
+        function createLoginHearts() {
+
+            const hearts = [
+                "💗",
+                "💖",
+                "💕",
+                "💓",
+                "💞",
+                "✨"
+            ];
+
+
+            for (
+                let i = 0;
+                i < 35;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement("span");
+
+
+                heart.className =
+                    "success-heart";
+
+
+                heart.textContent =
+                    hearts[
+                        Math.floor(
+                            Math.random() *
+                            hearts.length
+                        )
+                    ];
+
+
+                heart.style.left =
+                    "50%";
+
+                heart.style.top =
+                    "60%";
+
+
+                heart.style.setProperty(
+                    "--heart-move",
+                    (
+                        Math.random() * 500 -
+                        250
+                    ) + "px"
+                );
+
+
+                heart.style.fontSize =
+                    (
+                        15 +
+                        Math.random() * 25
+                    ) + "px";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function () {
+                        heart.remove();
+                    },
+                    1500
+                );
+
+            }
+
+        }
+
+
+        /* TÖRÖTT SZÍVEK */
+
+        function createBrokenHearts(x, y) {
+
+            for (
+                let i = 0;
+                i < 30;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement("span");
+
+
+                heart.className =
+                    "broken-heart";
+
+
+                heart.textContent =
+                    "💔";
+
+
+                heart.style.left =
+                    x + "px";
+
+                heart.style.top =
+                    y + "px";
+
+
+                const angle =
+                    Math.random() *
+                    Math.PI * 2;
+
+
+                const distance =
+                    80 +
+                    Math.random() * 280;
+
+
+                heart.style.setProperty(
+                    "--broken-x",
+                    Math.cos(angle) *
+                    distance + "px"
+                );
+
+
+                heart.style.setProperty(
+                    "--broken-y",
+                    Math.sin(angle) *
+                    distance + "px"
+                );
+
+
+                heart.style.setProperty(
+                    "--broken-rotate",
+                    (
+                        Math.random() * 720 -
+                        360
+                    ) + "deg"
+                );
+
+
+                heart.style.fontSize =
+                    (
+                        18 +
+                        Math.random() * 25
+                    ) + "px";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(
+                    function () {
+                        heart.remove();
+                    },
+                    1500
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
