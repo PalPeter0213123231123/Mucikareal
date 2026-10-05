@@ -11,7 +11,6 @@
 <body class="bucsu-page">
 
     <div class="nav-links">
-
         <div class="nav-left">
             <a href="index.html">Roblox</a>
             <a href="rolam.html">Mucikanak</a>
@@ -21,18 +20,11 @@
         </div>
 
         <div class="nav-right">
-            <a href="login.html" id="loginLink">
-                💗 Bejelentkezés
-            </a>
+            <a href="login.html" id="loginLink">💗 Bejelentkezés</a>
         </div>
-
     </div>
 
     <div class="bucsu-hearts">
-        <span>🖤</span>
-        <span>❤️</span>
-        <span>🖤</span>
-        <span>❤️</span>
         <span>🖤</span>
         <span>❤️</span>
         <span>🖤</span>
@@ -67,9 +59,7 @@
 
                 <div class="bucsu-paper">
 
-                    <button class="bucsu-close" id="bucsuClose">
-                        ×
-                    </button>
+                    <button class="bucsu-close" id="bucsuClose">×</button>
 
                     <div class="bucsu-paper-content">
 
@@ -114,7 +104,6 @@
                 </div>
 
                 <div class="bucsu-envelope-front"></div>
-
                 <div class="bucsu-flap"></div>
 
                 <div class="bucsu-seal">
@@ -137,41 +126,42 @@
             ❤️ Közös emlékeink
         </button>
 
-        <div class="memories-overlay" id="memoriesOverlay">
+    </main>
 
-            <button class="memories-close" id="memoriesClose">
-                ×
-            </button>
+    <div class="memories-overlay" id="memoriesOverlay">
 
-            <div class="memories-content">
+        <button class="memories-close" id="memoriesClose">
+            ×
+        </button>
 
-                <h2>Közös emlékeink</h2>
+        <div class="memories-content">
 
-                <div class="heart-gallery">
+            <h2>Közös emlékeink</h2>
 
-                    <img src="emlek1.jpg" alt="Közös emlék">
-                    <img src="emlek2.jpg" alt="Közös emlék">
-                    <img src="emlek3.jpg" alt="Közös emlék">
-                    <img src="emlek4.jpg" alt="Közös emlék">
-                    <img src="emlek5.jpg" alt="Közös emlék">
-                    <img src="emlek6.png" alt="Közös emlék">
-                    <img src="emlek7.jpg" alt="Közös emlék">
-                    <img src="noiszervek.jpg" alt="Közös emlék">
-                    <img src="emlek8.jpg" alt="Közös emlék">
-                    <img src="besties.png" alt="Közös emlék">
+            <div class="heart-gallery">
 
-                </div>
-
-                <p>🖤 Néhány emlék, amit nem felejtek el ❤️</p>
+                <img src="emlek1.jpg" alt="Közös emlék">
+                <img src="emlek2.jpg" alt="Közös emlék">
+                <img src="emlek3.jpg" alt="Közös emlék">
+                <img src="emlek4.jpg" alt="Közös emlék">
+                <img src="emlek5.jpg" alt="Közös emlék">
+                <img src="emlek6.png" alt="Közös emlék">
+                <img src="emlek7.jpg" alt="Közös emlék">
+                <img src="emlek8.jpg" alt="Közös emlék">
+                <img src="cutgrass.jfif" alt="Közös emlék">
+                <img src="cleanleaves.jfif" alt="Közös emlék">
 
             </div>
 
+            <p>
+                🖤 Néhány emlék, amit nem felejtek el ❤️
+            </p>
+
         </div>
 
-    </main>
+    </div>
 
     <script>
-        const bucsuLetter = document.getElementById("bucsuLetter");
         const bucsuEnvelope = document.getElementById("bucsuEnvelope");
         const bucsuClose = document.getElementById("bucsuClose");
 
@@ -200,28 +190,20 @@
 
         function createBucsuHearts() {
 
-            const hearts = [
-                "🖤",
-                "❤️",
-                "🖤",
-                "❤️",
-                "🖤"
-            ];
+            const hearts = ["🖤", "❤️"];
 
-            for (let i = 0; i < 80; i++) {
+            for (let i = 0; i < 60; i++) {
 
                 const heart = document.createElement("span");
 
                 heart.className = "bucsu-explosion-heart";
-
-                heart.textContent =
-                    hearts[Math.floor(Math.random() * hearts.length)];
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
                 heart.style.left = "50%";
                 heart.style.top = "50%";
 
                 const angle = Math.random() * Math.PI * 2;
-                const distance = 150 + Math.random() * 700;
+                const distance = 150 + Math.random() * 600;
 
                 heart.style.setProperty(
                     "--bucsu-x",
@@ -239,7 +221,7 @@
                 );
 
                 heart.style.fontSize =
-                    18 + Math.random() * 35 + "px";
+                    18 + Math.random() * 30 + "px";
 
                 document.body.appendChild(heart);
 
@@ -272,54 +254,66 @@
         });
 
         memoriesOverlay.addEventListener("click", function (event) {
+
             if (event.target === memoriesOverlay) {
                 memoriesOverlay.classList.remove("open");
             }
-        });
 
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                memoriesOverlay.classList.remove("open");
-            }
         });
 
         const memoryImages = document.querySelectorAll(".heart-gallery img");
 
-memoryImages.forEach(function(image) {
+        memoryImages.forEach(function (image) {
 
-    image.addEventListener("click", function(event) {
+            image.addEventListener("click", function (event) {
 
-        event.stopPropagation();
+                event.stopPropagation();
 
-        const viewer = document.createElement("div");
-        viewer.className = "memory-image-viewer";
+                const viewer = document.createElement("div");
+                viewer.className = "memory-image-viewer";
 
-        const bigImage = document.createElement("img");
-        bigImage.src = image.src;
-        bigImage.alt = image.alt;
+                const bigImage = document.createElement("img");
+                bigImage.src = image.src;
+                bigImage.alt = image.alt;
 
-        const closeButton = document.createElement("button");
-        closeButton.className = "memory-image-close";
-        closeButton.textContent = "×";
+                const closeButton = document.createElement("button");
+                closeButton.className = "memory-image-close";
+                closeButton.textContent = "×";
 
-        viewer.appendChild(closeButton);
-        viewer.appendChild(bigImage);
+                viewer.appendChild(closeButton);
+                viewer.appendChild(bigImage);
 
-        document.body.appendChild(viewer);
+                document.body.appendChild(viewer);
 
-        closeButton.addEventListener("click", function() {
-            viewer.remove();
+                closeButton.addEventListener("click", function () {
+                    viewer.remove();
+                });
+
+                viewer.addEventListener("click", function (event) {
+
+                    if (event.target === viewer) {
+                        viewer.remove();
+                    }
+
+                });
+
+            });
+
         });
 
-        viewer.addEventListener("click", function(event) {
-            if (event.target === viewer) {
-                viewer.remove();
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+                memoriesOverlay.classList.remove("open");
+
+                const viewer = document.querySelector(".memory-image-viewer");
+
+                if (viewer) {
+                    viewer.remove();
+                }
             }
+
         });
-
-    });
-
-});
     </script>
 
 </body>
