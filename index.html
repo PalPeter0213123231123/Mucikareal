@@ -1,388 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🖕 💔</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle, #292929, #050505);
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .symbols {
+      display: flex;
+      gap: 22px;
+      font-size: clamp(76px, 15vw, 150px);
+      animation: float 3s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .symbols span:last-child {
+      animation: pulse 1.8s infinite;
+    }
+
+    .decor {
+      position: absolute;
+      font-size: 40px;
+      animation: drift 4s ease-in-out infinite alternate;
+    }
+
+    .d1 { top: 12%; left: 12%; }
+    .d2 { top: 20%; right: 13%; }
+    .d3 { top: 48%; left: 5%; }
+    .d4 { top: 55%; right: 6%; }
+    .d5 { bottom: 15%; left: 19%; }
+    .d6 { bottom: 12%; right: 18%; }
+
+    .message {
+      position: absolute;
+      bottom: 9%;
+      width: 85%;
+      max-width: 620px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.6;
+      color: white;
+      padding: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid #555;
+      border-radius: 14px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+
+    @keyframes drift {
+      from { translate: 0 0; }
+      to { translate: 0 -14px; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <head>
-        <div class="nav-links">
+  <main class="page">
 
-            <div class="nav-left">
-                <a href="index.html">Roblox</a>
-                <a href="rolam.html">Mucikanak</a>
-                <a href="ajandekok.html">Ajandekok</a>
-                <a href="filmek.html">Filmek</a>
-                                <a href="bucsu.html">Bucs</a>
+    <span class="decor d1">🖕</span>
+    <span class="decor d2">💔</span>
+    <span class="decor d3">🖕</span>
+    <span class="decor d4">🖕</span>
+    <span class="decor d5">💔</span>
+    <span class="decor d6">🖕</span>
 
-            </div>
+    <div class="symbols">
+      <span>🖕</span>
+      <span>💔</span>
+    </div>
 
-            <div class="nav-right">
+    <div class="message">
+      Ezt igy itt hagyom neked
+    </div>
 
-                <a href="login.html" id="loginLink">
-                    💗 Bejelentkezés
-                </a>
+  </main>
 
-  
-
-            </div>
-
-        </div>
-
-        <div class="flowers">
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌺</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌷</span>
-            <span class="flower">🌸</span>
-            <span class="flower">🌺</span>
-        </div>
-
-        <div id="loader">
-            <div class="heart">💗</div>
-        </div>
-
-        <div class="content">
-        </div>
-    </head>
-
-    <main>
-
-        <h1 id="loveTitle">
-            Roblox jatekok amivel mucikaval🥰 jatszottunk
-        </h1>
-
-
-
-        <div class="favorite-section">
-
-            <div class="favorite-title">
-                💗 Mucika kedvenc játékai 💗
-            </div>
-
-            <div class="favorite-games">
-
-                <div class="choptrees favorite-game">
-
-                    <div class="favorite-badge">
-                        💗 KEDVENC
-                    </div>
-
-                    <img src="choptrees.png" alt="Chop Trees" style="width:100%">
-
-                    <div class="container">
-                        <h4><b>Chop Trees</b></h4>
-                        <p>Favágós csoda🥰</p>
-                    </div>
-
-                </div>
-
-
-                <div class="finishit favorite-game">
-
-                    <div class="favorite-badge">
-                        💗 KEDVENC
-                    </div>
-
-                    <img src="kepek/finishit.jfif" alt="Finish It" style="width:100%">
-
-                    <div class="container">
-                        <h4><b>Finish It</b></h4>
-                        <p>1 óráig medencét csinálni🙄</p>
-                    </div>
-
-                </div>
-
-
-                <div class="finishit favorite-game">
-
-                    <div class="favorite-badge">
-                        💗 KEDVENC
-                    </div>
-
-                    <img src="raiseananomaly.png" alt="Raise an Anomaly" style="width:100%">
-
-                    <div class="container">
-                        <h4><b>Raise an Anomaly</b></h4>
-                        <p>Mutánsokat nevelünk🥰</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="roblox">
-
-            <div class="finishit">
-                <img src="finishahouse.png" alt="finishahouse" style="width:100%">
-                <div class="container">
-                    <h4><b>Finish a house</b></h4>
-                    <p>Házat kell csinalni mucikaval🥰</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="midnightshift.jfif" alt="grocery" style="width:100%">
-                <div class="container">
-                    <h4><b>Midnight shift anomaly</b></h4>
-                    <p>Boltot vezetni és ufót lőni🥰</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="pinefall.jfif" alt="pinefall" style="width:100%">
-                <div class="container">
-                    <h4><b>Pinefall</b></h4>
-                    <p>Fahazba tulelni🤗</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="myanimemine.png" alt="my anime mine" style="width:100%">
-                <div class="container">
-                    <h4><b>My anime mine</b></h4>
-                    <p>Animes karakterek bányásznak😏</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="animalanomaly.jfif" alt="animal daycare" style="width:100%">
-                <div class="container">
-                    <h4><b>Animal Daycare</b></h4>
-                    <p>Kis gecikre kell vigyazni🥰</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="blair.jfif" alt="blair" style="width:100%">
-                <div class="container">
-                    <h4><b>Blair</b></h4>
-                    <p>Phasmobhobia copy (veszekedes mucikaval🥰)</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="inifrgeci.jfif" alt="night at the infirmary" style="width:100%">
-                <div class="container">
-                    <h4><b>Night at the Inifirmary</b></h4>
-                    <p>Túl nehéz</p>
-                </div>
-            </div>
-
-
-            <div class="finishit">
-                <img src="cleanleaves.jfif" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>Clean all the Leaves</b></h4>
-                    <p>Be kell szopkodni a leveleket😛</p>
-                </div>
-            </div>
-
-            <div class="finishit">
-                <img src="machine.jfif" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>Machine Party</b></h4>
-                    <p>Lealázom mucikát minden játékba🥰</p>
-                </div>
-            </div>
-
-            <div class="finishit">
-                <img src="besties.png" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>How close are u?</b></h4>
-                    <p>Mennyire ismerjuk egymast mucikaval🥰</p>
-                </div>
-            </div>
-
-            <div class="finishit">
-                <img src="bikeduo.jfif" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>Biker Duo</b></h4>
-                    <p>Legkomolyabb motor duo vagyunk🥰</p>
-                </div>
-            </div>
-
-            <div class="finishit">
-                <img src="chained.jfif" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>Chained Together</b></h4>
-                    <p>Osszekotve felmaszunk mindenhova🥰</p>
-                </div>
-            </div>
-
-            <div class="finishit">
-                <img src="meltice.jfif" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>Melt the Ice</b></h4>
-                    <p>Elso amit együtt előben jatszottunk, jeget vágtunk🥰</p>
-                </div>
-            </div>
-
-            <div class="finishit">
-                <img src="cutgrass.jfif" alt="clean all the leaves" style="width:100%">
-                <div class="container">
-                    <h4><b>Cut all the grass</b></h4>
-                    <p>Szinten amit élőben játszottunk, ezt jobban élveztem, tudtam csalni is tok joooooo volt ugy fuvet vagni🥰</p>
-                </div>
-            </div>
-
-          
-
-        </div>
-
-    </main>
-
-
-    <script>
-
-        const title = document.getElementById("loveTitle");
-
-        title.addEventListener("click", function (event) {
-
-            for (let i = 0; i < 20; i++) {
-
-                const heart = document.createElement("span");
-
-                heart.innerHTML = [
-                    "💗",
-                    "💖",
-                    "💕",
-                    "💓",
-                    "💞"
-                ][
-                    Math.floor(Math.random() * 5)
-                ];
-
-                heart.classList.add("heart-explosion");
-
-                heart.style.left = event.clientX + "px";
-                heart.style.top = event.clientY + "px";
-
-                const angle = Math.random() * Math.PI * 2;
-
-                const distance =
-                    80 + Math.random() * 140;
-
-                heart.style.setProperty(
-                    "--x",
-                    Math.cos(angle) * distance + "px"
-                );
-
-                heart.style.setProperty(
-                    "--y",
-                    Math.sin(angle) * distance + "px"
-                );
-
-                document.body.appendChild(heart);
-
-                setTimeout(() => {
-                    heart.remove();
-                }, 1000);
-
-            }
-
-        });
-
-    </script>
-
-    <script>
-
-        const favoriteGames = document.querySelectorAll(".favorite-game");
-
-        favoriteGames.forEach(game => {
-
-            game.addEventListener("click", function (event) {
-
-                const x = event.clientX;
-                const y = event.clientY;
-
-                const hearts = [
-                    "💗",
-                    "💖",
-                    "💕",
-                    "💓",
-                    "💞",
-                    "💘",
-                    "💝"
-                ];
-
-                for (let i = 0; i < 35; i++) {
-
-                    const heart = document.createElement("span");
-
-                    heart.classList.add("favorite-heart");
-
-                    heart.innerHTML =
-                        hearts[Math.floor(Math.random() * hearts.length)];
-
-                    heart.style.left = x + "px";
-                    heart.style.top = y + "px";
-
-                    const angle =
-                        Math.random() * Math.PI * 2;
-
-                    const distance =
-                        100 + Math.random() * 250;
-
-                    heart.style.setProperty(
-                        "--x",
-                        Math.cos(angle) * distance + "px"
-                    );
-
-                    heart.style.setProperty(
-                        "--y",
-                        Math.sin(angle) * distance + "px"
-                    );
-
-                    heart.style.setProperty(
-                        "--rotation",
-                        (Math.random() * 720 - 360) + "deg"
-                    );
-
-                    heart.style.fontSize =
-                        (18 + Math.random() * 25) + "px";
-
-                    document.body.appendChild(heart);
-
-                    setTimeout(() => {
-                        heart.remove();
-                    }, 1500);
-                }
-
-            });
-
-        });
-
-    </script>
 </body>
+</html>
 
-</html>ú
